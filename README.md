@@ -1,7 +1,8 @@
-
 # Docker React Demo 🚀
 
 Welcome to the **Docker React Demo**! This project is my playground for learning how to containerize a simple React app using Docker, and eventually hosting it on AWS. Feel free to follow along and explore as I dive into the world of Docker and cloud hosting! 🌍✨
+
+---
 
 ## 🔧 Setup
 
@@ -11,7 +12,7 @@ Get the project up and running locally with these easy steps:
 
 First, clone the repo to your local machine:
 
-```
+```bash
 git clone https://github.com/Kaylin98/docker-react-demo.git
 cd docker-react-demo
 ```
@@ -20,7 +21,7 @@ cd docker-react-demo
 
 Make sure you have [Node.js](https://nodejs.org/) installed, and then run:
 
-```
+```bash
 npm install
 ```
 
@@ -30,40 +31,64 @@ This will install all the necessary dependencies.
 
 Start the app with:
 
-```
+```bash
 npm start
 ```
 
 Visit [http://localhost:3000](http://localhost:3000) in your browser to see the app in action! 🚀
 
+---
+
 ## 🐳 Docker Deployment
 
-Ready to take it to the next level? Here’s how you can build and run the app in a Docker container:
+This project includes both development and production Docker setups.
 
-### 1. Build the Docker image
+### 🧪 Development
 
-Build the Docker image by running:
+Use the following steps to run the app in a development container with live reloading:
 
-```
-docker build -t docker-react-demo .
-```
+#### 1. Build the image
 
-### 2. Run the Docker container
-
-Once the image is built, run it in a container with:
-
-```
-docker run -p 3000:3000 docker-react-demo
+```bash
+docker build -f Dockerfile.dev -t docker-react-demo-dev .
 ```
 
-Visit [http://localhost:3000](http://localhost:3000) again to see the app running inside a container. Docker magic! ✨
+#### 2. Run the container
+
+```bash
+docker run -p 3000:3000 docker-react-demo-dev
+```
+
+You can now access the app at [http://localhost:3000](http://localhost:3000).
+
+---
+
+### 🚀 Production
+
+Build an optimized, production-ready container using multi-stage builds:
+
+#### 1. Build the production image
+
+```bash
+docker build -t docker-react-demo-prod .
+```
+
+#### 2. Run the production container
+
+```bash
+docker run -p 80:80 docker-react-demo-prod
+```
+
+The app will be served by Nginx at [http://localhost](http://localhost).
+
+---
 
 ## 🌎 Future Plans: Hosting on AWS
 
 Next step? I’m planning to deploy this app to **AWS** to get a taste of cloud hosting. Stay tuned as I learn how to scale this app in the cloud and automate deployments!
 
+---
+
 ## 📜 License
 
 This project is licensed under the MIT License - check out the [LICENSE](LICENSE) file for more details.
-
----
