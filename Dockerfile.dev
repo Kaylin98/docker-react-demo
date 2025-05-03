@@ -1,14 +1,14 @@
 FROM node:lts-alpine
 
 # Set working directory
-WORKDIR /usr/app
+WORKDIR /app
 
 # Only copy dependency definitions first
 # include package-lock.json if available
-COPY ["package.json", "package-lock.json", "./"] 
+COPY package.json .
 
 # Use npm ci if lock file is present, it's faster and more reliable
-RUN npm ci || npm install
+RUN npm install
 
 # Then copy the rest of your project
 COPY . .
