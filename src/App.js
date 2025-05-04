@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          I was changed on the develop branch
+          I was changed on the develop branch. Learn React
         </a>
       </header>
     </div>
