@@ -127,7 +127,6 @@ Leaving them running might result in actual charges — and your wallet will not
 - Delete the S3 bucket used for deployment packages.
 - Optionally, revoke IAM credentials you no longer need.
 
-Use it, learn from it, but don’t *pay* for it (unless you really mean to)! 😅
 
 ## 📜 License
 
